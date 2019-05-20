@@ -29,6 +29,13 @@ Capybara.register_driver :chrome_headless do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities)
 end
 
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -43,4 +50,6 @@ RSpec.configure do |config|
   config.before(:each, type: :system, js: true) do
     driven_by :chrome_headless
   end
+
+  config.include FactoryBot::Syntax::Methods
 end
