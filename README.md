@@ -1,24 +1,41 @@
-# README
+# CNAB Explorer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*CNAB Explorer* is web application built on Ruby on Rails and a bit of Vue.js intented to make easy explore contents of CNAB files.
 
-Things you may want to cover:
+*CNAB Explorer* is built on
 
-* Ruby version
+- Ruby 2.5
+- Ruby on Rails 5.2.1
+- PostgreSQL
+- Vue.js 2
+- Bulma
 
-* System dependencies
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Requirements
 
-* Database initialization
+Before proceeding make sure you have all the following softwares correctly installed:
 
-* How to run the test suite
+- Git
+- Ruby 2.5.1
+- Docker
+- docker-compose
+- Bundler
 
-* Services (job queues, cache servers, search engines, etc.)
+### Setup
 
-* Deployment instructions
+Getting up and running is pretty easy and standard if you're running Docker and docker-compose. Follow the 3 steps bellow to get the project setup in your development machine.
 
-* ...
+1) Get all services up with docker-compose
+```sh
+$ docker-compose up -d
+```
+2) Install dependencies and configure database
+```sh
+$ bin/setup
+```
+3) Start the server and have fun
+```sh
+$ bin/rails s
+```
