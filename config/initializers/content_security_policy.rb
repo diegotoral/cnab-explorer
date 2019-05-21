@@ -11,10 +11,10 @@ Rails.application.config.content_security_policy do |policy|
 #   policy.object_src  :none
 #   policy.style_src   :self, :https
 
-  if Rails.env.development?
-    policy.script_src  :self, :https, :unsafe_eval
-  else
+  if Rails.env.production?
     policy.script_src :self, :https
+  else
+    policy.script_src  :self, :https, :unsafe_eval
   end
 
 #   # Specify URI for violation reports
