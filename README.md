@@ -39,3 +39,9 @@ $ bin/setup
 ```sh
 $ bin/rails s
 ```
+
+
+## ToDo
+
+- [ ] Rename `importations` table to `cnabs` (importation is a really bad name)
+- [ ] Properly handle importation/processing errors on front-end (throught websockets)
