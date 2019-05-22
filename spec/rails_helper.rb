@@ -6,6 +6,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'capybara/rspec'
+require 'wisper/rspec/matchers'
 
 # Requires supporting ruby files with custom matchers and macros, etc.
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
@@ -52,4 +53,5 @@ RSpec.configure do |config|
   end
 
   config.include FactoryBot::Syntax::Methods
+  config.include Wisper::RSpec::BroadcastMatcher
 end
