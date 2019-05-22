@@ -43,5 +43,9 @@ $ bin/rails s
 
 ## ToDo
 
+- [ ] Deploy to Heroku
+- [ ] Setup Travis CI
+- [ ] Setup Coveralls and add badges to `README.md`
 - [ ] Rename `importations` table to `cnabs` (importation is a really bad name)
 - [ ] Properly handle importation/processing errors on front-end (throught websockets)
+- [ ] Update `bin/setup` to generate `.env.development.local` and `.env.test.local` files so developer don't have to do it himself :nail_care:
