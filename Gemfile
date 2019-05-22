@@ -10,6 +10,7 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.2'
 gem 'redis'
 gem 'webpacker', '~> 4.0'
+gem 'wisper', '2.0.0'
 
 
 group :development, :test do
