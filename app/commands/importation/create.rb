@@ -9,6 +9,7 @@ class Importation::Create < ::ApplicationCommand
     importation = importation_source.call(file: file)
 
     publish(:success, importation)
+    publish(:importation_created, importation)
   rescue ActiveRecord::RecordInvalid => invalid
     publish(:error, invalid.record.errors)
   end

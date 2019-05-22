@@ -1,5 +1,100 @@
-Stores
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        CNAB #123
+      </h1>
 
-<% @stores.each do |store| %>
-  <%= store.name %>
-<% end %>
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Transactions</p>
+            <p class="title">3,456</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Stores</p>
+            <p class="title">123</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Total balence</p>
+            <p class="title">456K</p>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="margin-top: 1.5rem;">
+  <header style="margin-bottom: 1.5rem;">
+    <h1 class="title">
+      Stores
+    </h1>
+  </header>
+
+  <nav class="level">
+    <div class="level-left">
+      <div class="level-item">
+        <div class="field has-addons">
+          <p class="control">
+            <input class="input is-small" type="text" placeholder="Find a store">
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="level-right">
+      <p class="level-item">
+        <a href="#">
+          Newest
+        </a>
+      </p>
+      <p class="level-item">
+        <a href="#">
+          Oldest
+        </a>
+      </p>
+    </div>
+  </nav>
+
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Owner</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 15.times do |i| %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= link_to "Store #{i}", nil %></td>
+          <td><%= "Store Owner #{i}" %></td>
+          <td><%= i*2_999 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <a class="pagination-previous">Previous</a>
+    <a class="pagination-next">Next page</a>
+    <ul class="pagination-list">
+      <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+      <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+      <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+      <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+      <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+    </ul>
+  </nav>
+</div>
