@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_031655) do
+ActiveRecord::Schema.define(version: 2019_05_22_034049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,23 @@ ActiveRecord::Schema.define(version: 2019_05_21_031655) do
     t.string "owner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "importations_id"
+    t.index ["importations_id"], name: "index_stores_on_importations_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "kind", default: 0
+    t.integer "value_cents", default: 0
+    t.string "cpf"
+    t.string "card_number"
+    t.datetime "appearance_at"
+    t.bigint "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_transactions_on_store_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "stores", "importations", column: "importations_id"
+  add_foreign_key "transactions", "stores"
 end
